@@ -11,6 +11,7 @@ bot.user.setActivity("Bread <3", {type: "LISTENING"});
 bot.on("message", async message => {
 let msg = message.content.toLowerCase();
 let args = message.content.slice(pfix.length).trim().split(/ +/g);
+if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
 try { 
  let commandFile = require(`./commands/${cmd}.js`)
