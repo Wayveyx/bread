@@ -1,1 +1,1 @@
-node bread.js
+worker: node bread.js
