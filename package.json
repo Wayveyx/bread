@@ -1,0 +1,19 @@
+{
+  "name": "bread",
+  "version": "1.0.0",
+  "description": "Get bready for this adventure.",
+  "main": "bread.js",
+  "scripts": {
+    "start": "node bread.js"
+  },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wayyvvee/bread.git"
+  },
+    "homepage": "https://github.com/wayyvvee/bread#readme",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "discord.js-commando": "^0.9.0",
+    "fs-nextra": "^0.3.2",
+   }
+}
