@@ -16,7 +16,7 @@ const command = args.shift().toLowerCase();
  let commandFile = require(`./commands/${command}.js`);
           commandFile.run(client, message, args);
 } catch (err) {
-bot.channels.get().send(new Discord.RichEmbed()
+bot.channels.get('565011678203215892').send(new Discord.RichEmbed()
 .setTitle("Error")
 .setAuthor(message.author.tag)
 .setColor([255, 0, 0])
