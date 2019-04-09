@@ -22,6 +22,7 @@ bot.channels.get().send(new Discord.RichEmbed()
 .setColor([255, 0, 0])
 .setDescription(err.message)
 .setTimestamp());
+}
 });
 
 bot.login(process.env.TOKEN)
