@@ -23,7 +23,6 @@ try {
 .setDescription(err.message)
 .setTimestamp());
 }
-}
 });
 
 bot.login(process.env.TOKEN)
