@@ -15,8 +15,10 @@ let args = message.content.slice(pfix.length).trim().split(/ +/g);
 if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
  // this space is for commands thsat dont need a prefix
+ let breadp = ['565351138526887936', '565315921736892428']
+ let rbread = Math.random(rbread.length) * 50
  if(msg.includes("bread")) {
-  message.react('565315921736892428');
+  message.react(rbread[result]);
  }
 try { 
  if(!msg.startsWith(pfix)) return;
