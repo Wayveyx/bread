@@ -5,6 +5,7 @@ const pfix = 'b!';
 
 bot.on("ready", () => {
 bot.channels.get('564951236487675914').send('Bready.');
+console.log('Bread')
 bot.user.setActivity("Bread <3", {type: "LISTENING"});
 });
 
@@ -20,12 +21,15 @@ try {
  let commandFile = require(`./commands/${cmd}.js`)
  commandFile.run(bot, message, args);
 } catch(err) {
- bot.channels.get('565011678203215892').send(new Discord.RichEmbed()
+
+let e = new Discord.RichEmbed()
 .setTitle("Error")
 .setAuthor(message.author.tag)
 .setColor([255, 0, 0])
 .setDescription(err.message)
-.setTimestamp());
+.setTimestamp();
+message.channel.send(e);
+bot.channels.get('565011678203215892').send(e)
 }
 });
 
