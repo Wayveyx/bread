@@ -16,7 +16,7 @@ if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
  // this space is for commands thsat dont need a prefix
  let breadp = ['565351138526887936', '565315921736892428']
- let rbread = Math.random(rbread.length) * 50
+ let rbread = Math.random(breadp.length) * 50
  if(msg.includes("bread")) {
   message.react(rbread[result]);
  }
