@@ -1,4 +1,5 @@
 const fs = require('fs');
+const fsn = require('fs-nextra')
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const pfix = 'b!';
@@ -18,7 +19,17 @@ const cmd = args.shift().toLowerCase();
  let breadp = ['565351138526887936', '565315921736892428']
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
  if(msg.includes("bread")) {
-  message.react(rbread);
+  fsn.readJSON('./commands/jsons/react.json')
+      .then((racttf) => {
+       const greact = reacttf[message.author.id]
+       if(greact = undefined) {
+       qreact = true;
+       }
+        const user = greact.userID
+        let qreact = greact.react
+        if(qreact == "false") return;
+        message.react(rbread);
+  })
  }
 try { 
  if(!msg.startsWith(pfix)) return;
