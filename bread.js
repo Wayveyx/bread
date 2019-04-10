@@ -16,7 +16,7 @@ if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
  // this space is for commands thsat dont need a prefix
  if(msg.includes("bread")) {
-  message.react('bread');
+  message.react(':bread:');
  }
 try { 
  if(!msg.startsWith(pfix)) return;
