@@ -20,7 +20,7 @@ const cmd = args.shift().toLowerCase();
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
  if(msg.includes("bread")) {
   fsn.readJSON('./commands/jsons/react.json')
-      .then((racttf) => {
+      .then((reacttf) => {
        const greact = reacttf[message.author.id]
        if(greact = undefined) {
        qreact = true;
