@@ -13,7 +13,10 @@ let msg = message.content.toLowerCase();
 let args = message.content.slice(pfix.length).trim().split(/ +/g);
 if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
+ // this space is for commands thsat dont need a prefix
+ 
 try { 
+ if(!msg.startsWith(pfix)) return;
  let commandFile = require(`./commands/${cmd}.js`)
  commandFile.run(bot, message, args);
 } catch(err) {
