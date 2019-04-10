@@ -18,7 +18,7 @@ const cmd = args.shift().toLowerCase();
  let breadp = ['565351138526887936', '565315921736892428']
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
  if(msg.includes("bread")) {
-  message.react(rbread[result]);
+  message.react(rbread);
  }
 try { 
  if(!msg.startsWith(pfix)) return;
