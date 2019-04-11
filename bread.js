@@ -19,17 +19,15 @@ const cmd = args.shift().toLowerCase();
  let breadp = ['565351138526887936', '565315921736892428']
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
  if(msg.includes("bread")) {
-  fsn.readJSON('./commands/jsons/react.json')
-      .then((reacttf) => {
-       const greact = reacttf[message.author.id]
-       if(greact = undefined) {
-       qreact = true;
-       }
-        const user = greact.userID
+        let ureact = require('./commands/jsons/react.json')
+        let greact = ureact[message.author.id]
+        let user = greact.userID
         let qreact = greact.react
+        if(!greact) {
+         qreact = "true";
+        }
         if(qreact == "false") return;
         message.react(rbread);
-  })
  }
 try { 
  if(!msg.startsWith(pfix)) return;
