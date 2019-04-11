@@ -1,5 +1,4 @@
 const fs = require('fs');
-const fsn = require('fs-nextra')
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const pfix = 'b!';
