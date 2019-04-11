@@ -20,11 +20,11 @@ const cmd = args.shift().toLowerCase();
  if(msg.includes("bread")) {
         let ureact = require('./commands/jsons/react.json')
         let greact = ureact[message.author.id]
+        if(greact = undefined) {
+         return message.react(rbread);
+        }
         let user = greact.userID
         let qreact = greact.react
-        if(greact = undefined) {
-         qreact = "true";
-        }
         if(qreact == "false") return;
         message.react(rbread);
  }
