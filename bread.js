@@ -22,7 +22,7 @@ const cmd = args.shift().toLowerCase();
         let greact = ureact[message.author.id]
         let user = greact.userID
         let qreact = greact.react
-        if(!greact) {
+        if(greact = undefined) {
          qreact = "true";
         }
         if(qreact == "false") return;
