@@ -2,6 +2,13 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const pfix = 'b!';
+const mysql = require("mysql");
+const con = mysql.createConnection({
+ host: process.env.HOST,
+ user: process.env.USER,
+ password: process.env.DBPASS,
+ database: process.env.USER
+})
 
 bot.on("ready", () => {
 bot.channels.get('564951236487675914').send('Bready.');
