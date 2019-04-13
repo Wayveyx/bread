@@ -3,19 +3,24 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const pfix = 'b!';
 const mysql = require("mysql");
-const con = mysql.createConnection({
- host: process.env.HOST,
- user: process.env.USER,
- password: process.env.DBPASS,
- database: process.env.USER
-})
 
 bot.on("ready", () => {
 bot.channels.get('564951236487675914').send('Bready.');
 console.log('Bread')
 bot.user.setActivity("Bread <3", {type: "LISTENING"});
 });
+var con = mysql.createConnection({
+ host: process.env.HOST,
+ user: process.env.USER,
+ password: process.env.DBPASS,
+ database: process.env.USER
+})
 
+con.connect(err => {
+ if(err) throw err;
+ console.log("Connected to the DB");
+ con.query("SHOW TABLES", console.log); //testing if it works
+})
 bot.on("message", async message => {
 let msg = message.content.toLowerCase();
 let args = message.content.slice(pfix.length).trim().split(/ +/g);
