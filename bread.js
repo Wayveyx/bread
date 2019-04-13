@@ -11,9 +11,9 @@ bot.user.setActivity("Bread <3", {type: "LISTENING"});
 });
 var con = mysql.createConnection({
  host: `${process.env.HOST}`,
- user: `${process.env.USER}`,
- password: `${process.env.DBPASS},
- database: `${process.env.USER}`
+ user: `process.env.USER`,
+ password: `process.env.DBPASS,
+ database: `process.env.USER`
 })
 
 con.connect(err => {
