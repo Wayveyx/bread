@@ -16,11 +16,11 @@ var con = mysql.createConnection({
  database: `${process.env.USER}`
 })
 
-con.connect(err => {
+/*con.connect(err => {
  if(err) throw err;
  console.log("Connected to the DB");
  con.query("SHOW TABLES", console.log); //testing if it works
-})
+})ugh*/
 bot.on("message", async message => {
 let msg = message.content.toLowerCase();
 let args = message.content.slice(pfix.length).trim().split(/ +/g);
