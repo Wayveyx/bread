@@ -30,14 +30,14 @@ const cmd = args.shift().toLowerCase();
  let breadp = ['565351138526887936', '565315921736892428']
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
  if(msg.includes("bread")) {
-        let ureact = require('./commands/jsons/react.json')
+       /* let ureact = require('./commands/jsons/react.json')
         let greact = ureact[message.author.id]
         if(greact = undefined) {
          return message.react(rbread);
         }
         let user = greact.userID
         let qreact = greact.react
-        if(qreact == "false") return;
+        if(qreact == "false") return;*/
         message.react(rbread);
  }
 try { 
