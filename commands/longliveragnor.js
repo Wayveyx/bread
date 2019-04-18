@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 exports.run = async (bot, message, args) => {
 if(message.channel.id !== "468138282279108638") {
  bot.channels.get("468138282279108638").send(`${message.author.username} has claimed to see Jamerusalem, type \`b!longliveragnor\` to confirm.`); 
+ message.channel.send("Your sighting has been reported.")
  return;
 }
 let createChan = await message.guild.createChannel('jamerusalem');
