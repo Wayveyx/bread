@@ -21,7 +21,7 @@ const code = args;
   function clean(text) {
 		if (typeof (text) == 'string')
 			return text
-	    		.replace(token, 'Sorry, but token is undefined')
+	    		.replace(bot.token, 'Sorry, but token is undefined')
 		else
 			return text;
 	}
