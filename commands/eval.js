@@ -11,7 +11,7 @@ const code = args;
 	message.channel.send(new Discord.RichEmbed()
 	.setColor([255, 0, 0])
     .setTitle('Evaled')
-	.setDescription(${clean(evaled)}));
+	.setDescription(`${clean(evaled)}`));
 	} catch (err) {
 		message.channel.send(new Discord.RichEmbed()
 		.setTitle("Error")
