@@ -1,28 +1,40 @@
-const Discord = require("discord.js")
+const discord = require('discord.js');
 
-exports.run = (bot, message, args) => {
-if(message.author.id !== "363474941523263518") return;
-	try{
-const code = args;
-	var evaled = eval(code);
-	evaled = clean(evaled);
-	if (typeof evaled !== 'string')
-	evaled = require('util').inspect(evaled);
-	message.channel.send(new Discord.RichEmbed()
-	.setColor([255, 0, 0])
-    .setTitle('Evaled')
-	.setDescription(`${clean(evaled)}`));
-	} catch (err) {
-		message.channel.send(new Discord.RichEmbed()
-		.setTitle("Error")
-		.setColor([255, 0, 0])
-		.setDescription(`${clean(err)}`));
-	}
-  function clean(text) {
-		if (typeof (text) == 'string')
-			return text
-	    		.replace(bot.token, 'Sorry, but token is undefined')
-		else
-			return text;
-	}
+exports.run = async (bot, message, args, tools) => {
+
+if(message.author.id !== "363474941523263518") { 
+let no = new discord.RichEmbed()
+.setTitle('Bot Admins Only.')
+.setColor([255,0,0])
+.setDescription('The eval command is bot admins only.');
+message.channel.send({embed: no});
+return;
+}
+try {
+var code = args.join(" ");
+var evaled = eval(code);
+
+if (typeof evaled !== 'string')
+evaled = require('util').inspect(evaled);
+
+let amevaled = new discord.RichEmbed()
+.setTitle('Evaled')
+.setColor([255,0,0])
+.setDescription(clean(evaled));
+message.channel.send({embed: amevaled});
+} catch(err) { 
+message.channel.send(new discord.RichEmbed()
+.setTitle('Error')
+.setColor([255, 0, 0])
+.setDescription(clean(err)));
+}
+
+function clean(text) {
+if (typeof(text) === 'string')
+return text.replace(/`/g, '`' + String.fromCharCode(8203)).replace(/@/g, '@' + String.fromCharCode(8203))
+           .replace(bot.token, 'MCA3NjM0NDc9MTIr3ktyNzY6.UDnaRg.uqLifnope7FFSf_xQqNdiB6T3A');
+else
+return text;
+}
+
 }
