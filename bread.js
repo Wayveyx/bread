@@ -2,25 +2,24 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const pfix = 'b!';
-const mysql = require("mysql");
+let d = new Date(),
+    day = d.getDay()+1;
 
 bot.on("ready", () => {
 bot.channels.get('564951236487675914').send('Bready.');
 console.log('Bread')
 bot.user.setActivity("Bread <3", {type: "LISTENING"});
+try{
+let today = 1;
+if(today !== day) {
+ console.log("test")
+}
+} catch(e) {
+ console.log(e.message)
+}
 });
-var con = mysql.createConnection({
- host: `${process.env.HOST}`,
- user: `${process.env.USER}`,
- password: `${process.env.DBPASS}`,
- database: `${process.env.USER}`
-})
 
-/*con.connect(err => {
- if(err) throw err;
- console.log("Connected to the DB");
- con.query("SHOW TABLES", console.log); //testing if it works
-})ugh*/
+
 bot.on("message", async message => {
 let msg = message.content.toLowerCase();
 let args = message.content.slice(pfix.length).trim().split(/ +/g);
@@ -30,14 +29,6 @@ const cmd = args.shift().toLowerCase();
  let breadp = ['565351138526887936', '565315921736892428']
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
  if(msg.includes("bread")) {
-       /* let ureact = require('./commands/jsons/react.json')
-        let greact = ureact[message.author.id]
-        if(greact = undefined) {
-         return message.react(rbread);
-        }
-        let user = greact.userID
-        let qreact = greact.react
-        if(qreact == "false") return;*/
         message.react(rbread);
  }
 try { 
