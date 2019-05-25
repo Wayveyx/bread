@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = (bot, message, args) => {\
+exports.run = (bot, message, args) => {
 if(message.channel.id !== "564982736272490506") return;
 if(!message.content.includes("p-")) return message.channel.send("Please provide a ping type.").then(m => {
                                                                                                 m.delete(5000)});
