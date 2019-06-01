@@ -19,10 +19,10 @@ const cmd = args.shift().toLowerCase();
 if(message.channel.topic != null) {
 if(message.channel.topic.includes("Bread:Disable")) return;
 }
+if(message.channel.topic != null) {
+if(message.channel.topic.includes("Bread:React")) {
 let breadp = ['565351138526887936', '565315921736892428']
 let rbread = breadp[Math.floor(Math.random() * breadp.length)]
-if(message.channel.topic != null){
-if(!message.channel.topic.includes("Bread:NoReact")) {
 if(msg.includes("bread")) {
        message.react(rbread);
 }
