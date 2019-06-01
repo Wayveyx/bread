@@ -16,7 +16,7 @@ let msg = message.content.toLowerCase();
 let args = message.content.slice(pfix.length).trim().split(/ +/g);
 if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
-if(message.channel.topic.includes("Bread:Disable"))) return;
+if(message.channel.topic.includes("Bread:Disable")) return;
  // this space is for commands thsat dont need a prefix
  let breadp = ['565351138526887936', '565315921736892428']
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
