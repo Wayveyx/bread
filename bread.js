@@ -18,8 +18,6 @@ if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
 if(message.channel.topic != null) {
 if(message.channel.topic.includes("Bread:Disable")) return;
-}
-if(message.channel.topic != null) {
 if(message.channel.topic.includes("Bread:React")) {
 let breadp = ['565351138526887936', '565315921736892428']
 let rbread = breadp[Math.floor(Math.random() * breadp.length)]
@@ -27,7 +25,7 @@ if(msg.includes("bread")) {
        message.react(rbread);
 }
 }
-} //Yeah the reacting got annoying so i made a way to disable it
+}
  if(!msg.startsWith(pfix)) return;
 try { 
  let commandFile = require(`./commands/${cmd}.js`)
