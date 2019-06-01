@@ -2,21 +2,12 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const pfix = 'b!';
-let d = new Date(),
-    day = d.getDay()+1;
 
 bot.on("ready", () => {
 bot.channels.get('564951236487675914').send('Bready.');
 console.log('Bread')
 bot.user.setActivity("Bread <3", {type: "LISTENING"});
-try{
-let today = 1;
-if(today !== day) {
- console.log("test")
-}
-} catch(e) {
- console.log(e.message)
-}
+
 });
 
 
@@ -25,14 +16,15 @@ let msg = message.content.toLowerCase();
 let args = message.content.slice(pfix.length).trim().split(/ +/g);
 if(message.author.bot) return;
 const cmd = args.shift().toLowerCase();
+if(message.channel.topic.includes("Bread:Disable"))) return;
  // this space is for commands thsat dont need a prefix
  let breadp = ['565351138526887936', '565315921736892428']
  let rbread = breadp[Math.floor(Math.random() * breadp.length)]
  if(msg.includes("bread")) {
         message.react(rbread);
  }
-try { 
  if(!msg.startsWith(pfix)) return;
+try { 
  let commandFile = require(`./commands/${cmd}.js`)
  commandFile.run(bot, message, args);
 } catch(err) {
