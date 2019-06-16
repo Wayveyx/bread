@@ -6,6 +6,6 @@ if(message.channel.id !== "468138282279108638") {
  message.channel.send("Your sighting has been reported.")
  return;
 }
-let createChan = await message.guild.createChannel('jamerusalem');
+let createChan = await message.guild.createChannel('jamrusalem');
 message.channel.send("<:check_mark:565315921736892428> Have fun capturing.")
 }
